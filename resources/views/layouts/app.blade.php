@@ -49,6 +49,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div id="app">
 
+        @include('includes.messages')
 
         <main class="py-4">
             @yield('content')
