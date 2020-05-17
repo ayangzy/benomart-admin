@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Profile;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $profile= Profile::where('user_id', Auth::user()->id)->first();
+        return view('dashboard', compact('profile'));
     }
 }

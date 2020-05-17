@@ -216,8 +216,9 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
             @if(Auth::check())
+            @if($profile !== NULL)
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+            <img src="{{ $profile->image }}" class="user-image" alt="User Image">
             <span class="hidden-xs">{{ Auth::user()->name }}</span>
           </a>
           <ul class="dropdown-menu">
@@ -225,7 +226,7 @@
             <!-- User image -->
             <li class="user-header">
 
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="{{ $profile->image }}" class="img-circle" alt="User Image">
 
               <p>
                 {{ Auth::user()->name }} - Web Developer
@@ -246,7 +247,42 @@
                   <a href="#">Friends</a>
                 </div>
               </div>
+              @else
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{ asset('dist/img/avatar.png') }}" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+              </a>
+              <ul class="dropdown-menu">
+
+                <!-- User image -->
+                <li class="user-header">
+
+                  <img src="{{ asset('dist/img/avatar.png') }}" class="img-circle" alt="User Image">
+
+                  <p>
+                    {{ Auth::user()->name }} - Web Developer
+                    <small>Member since - {{ (Auth::user()->created_at)->diffForHumans() }}</small>
+                  </p>
+
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                  <div class="row">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </div>
+
               <!-- /.row -->
+              @endif
+              @endif
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
@@ -269,7 +305,7 @@
               </div>
             </li>
           </ul>
-          @endif
+
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>

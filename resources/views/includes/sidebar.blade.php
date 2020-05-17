@@ -3,13 +3,24 @@
   <section class="sidebar">
     <!-- Sidebar user panel -->
     <div class="user-panel">
+         @if(Auth::check())
+         @if($profile !==NULL)
       <div class="pull-left image">
-        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+        <img src="{{ asset($profile->image) }}" class="img-circle"  alt="User Image">
       </div>
       <div class="pull-left info">
-          @if(Auth::check())
         <p>{{ Auth::user()->name }}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
+        @else
+        <div class="pull-left image">
+            <img src="{{ asset('dist/img/avatar.png') }}" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p>{{ Auth::user()->name }}</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
+        @endif
         @endif
       </div>
     </div>
@@ -29,7 +40,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <li class="active treeview menu-open">
-        <a href="#">
+        <a href="/dashboard">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 
         </a>
@@ -91,7 +102,7 @@
 
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Settings</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Update Profile</span></a></li>
+      <li><a href="{{ route('profile.show', Auth::user()->name) }}"><i class="fa fa-circle-o text-yellow"></i> <span>Update Profile</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Change Password</span></a></li>
     </ul>
   </section>
