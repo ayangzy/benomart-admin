@@ -101,8 +101,8 @@
       </li>
 
       <li class="header">LABELS</li>
-      <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Settings</span></a></li>
-      <li><a href="{{ route('profile.show', Auth::user()->name) }}"><i class="fa fa-circle-o text-yellow"></i> <span>Update Profile</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Change Password</span></a></li>
+      <li><a href="#"><i class="fa fa-cog text-red"></i> <span>Settings</span></a></li>
+      <li><a href="{{ route('profile.show', Auth::user()->name) }}"><i class="fa fa-user text-yellow"></i> <span>Update Profile</span></a></li>
+      <li><a href="{{ route('change-password') }}"><i class="fa fa-lock text-aqua"></i> <span>Change Password</span></a></li>
     </ul>
   </section>
