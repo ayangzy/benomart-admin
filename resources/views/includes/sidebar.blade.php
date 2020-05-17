@@ -57,7 +57,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="{{route('categories.create')}}"><i class="fa fa-circle-o"></i>Categories</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i> Sub-categories</a></li>
+          <li><a href="{{ route('subcategories.create')}}"><i class="fa fa-circle-o"></i> Sub-categories</a></li>
         </ul>
       </li>
       <li class="treeview">

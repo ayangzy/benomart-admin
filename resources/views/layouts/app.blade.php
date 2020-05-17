@@ -42,6 +42,9 @@
 <!-- DataTables -->
 <link rel="stylesheet" href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ ('bower_components/select2/dist/css/select2.min.css') }}">
+
 
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -100,6 +103,14 @@
 <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
+
+<!-- Select2 -->
+<script src="{{ ('bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<!-- InputMask -->
+<script src="{{ ('plugins/input-mask/jquery.inputmask.js') }}"></script>
+<script src="{{ ('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+<script src="{{ ('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 
 
 
