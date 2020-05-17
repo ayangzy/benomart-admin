@@ -82,7 +82,8 @@ class CategoriesController extends Controller
     {
         //
         $category = Category::where('slug', $slug)->first();
-        return view('admins.categories.edit', compact('category'));
+        $profile = Profile::where('user_id', Auth::user()->id)->first();
+        return view('admins.categories.edit', compact('category', 'profile'));
     }
 
     /**
