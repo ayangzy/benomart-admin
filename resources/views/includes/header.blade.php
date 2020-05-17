@@ -218,7 +218,7 @@
             @if(Auth::check())
             @if($profile !== NULL)
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ $profile->image }}" class="user-image" alt="User Image">
+            <img src="{{ asset($profile->image) }}" class="user-image" alt="User Image">
             <span class="hidden-xs">{{ Auth::user()->name }}</span>
           </a>
           <ul class="dropdown-menu">
@@ -226,7 +226,7 @@
             <!-- User image -->
             <li class="user-header">
 
-              <img src="{{ $profile->image }}" class="img-circle" alt="User Image">
+              <img src="{{ asset($profile->image) }}" class="img-circle" alt="User Image">
 
               <p>
                 {{ Auth::user()->name }} - Web Developer

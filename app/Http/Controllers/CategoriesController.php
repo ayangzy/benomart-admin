@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Profile;
+use Auth;
 use Session;
 
 class CategoriesController extends Controller
@@ -26,8 +28,9 @@ class CategoriesController extends Controller
     public function create()
     {
         //
+        $profile = Profile::where('user_id', Auth::user()->id)->first();
         $categories = Category::orderBy('created_at', 'desc')->paginate(20);
-        return view('admins.categories.create', compact('categories'));
+        return view('admins.categories.create', compact('categories', 'profile'));
     }
 
     /**
