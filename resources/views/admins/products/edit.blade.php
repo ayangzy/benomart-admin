@@ -142,7 +142,7 @@
                         <div class="form-group row">
                             <label for="productColor" class="col-sm-2 control-label">Product Description</label>
                             <div class="col-md-10">
-                                <textarea name="productDescription" class="textarea form-control @error('productDescription') is-invalid @enderror" colspan="10" rowspan="5" placeholder="Enter Product Description">{{ $product->productDescription }}</textarea>
+                                <textarea name="productDescription" class="form-control @error('productDescription') is-invalid @enderror" id="editor1" name="editor1" colspan="3" rowspan="5" placeholder="Enter Product Description">{{ $product->productDescription }}</textarea>
 
                                 @error('productDescription')
                                 <span class="invalid-feedback" role="alert">
