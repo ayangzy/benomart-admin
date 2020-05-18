@@ -69,8 +69,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>Insert Product</a></li>
-          <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Manage Products</a></li>
+          <li><a href="{{ route('products.create') }}"><i class="fa fa-circle-o"></i>Insert Product</a></li>
+          <li><a href="{{ route('products.index') }}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
         </ul>
       </li>
       <li class="treeview">
