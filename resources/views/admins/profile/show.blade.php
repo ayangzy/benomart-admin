@@ -41,13 +41,18 @@
             <div class="box box-info">
               <div class="box-header with-border">
                 <h3 class="box-title">Complete Your Update -  @if(Auth::check()) {{ Auth::user()->name }} @endif</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+              </div>
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <form class="form-horizontal" action="{{ route('profile.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
-                  @csrf
-                  {{method_field('PUT')}}
+
                 <div class="box-body">
+                    <form class="form-horizontal" action="{{ route('profile.update', Auth::user()->id) }}"    method="post" enctype="multipart/form-data">
+                        @csrf
+                        {{method_field('PUT')}}
                   <div class="form-group  has-feedback">
                     <label for="name" class="col-sm-2 control-label">Businsess Name</label>
 
@@ -148,10 +153,10 @@
                 <!-- /.box-body -->
 
                 <div class="box-footer">
-                    <div class="form-group">
+                    <div class="form-group row">
                         <label for="submit" class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-info pull-left">Create Profile</button>
+                            <button type="submit" class="btn btn-primary pull-left">Create Profile</button>
                         </div>
                       </div>
 
